@@ -19,9 +19,8 @@ def test_read_sheep():
     }
 
 def test_add_sheep():
-    db = {"id": 2, "name": "test", "breed": "test", "sex": "test"}
-    client.post("/sheep", json={"id": 1, "name": "Spice", "breed": "Gotland", "sex": "ewe"})
-    response = client.put("/sheep", json=db)
+    db = {"id": 8, "name": "test", "breed": "test", "sex": "test"}
+    response = client.post("/sheep", json=db)
     assert response.status_code == 201
     assert response.json() == db
 
