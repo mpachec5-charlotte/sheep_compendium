@@ -23,4 +23,6 @@ def test_add_sheep():
     response = client.post("/sheep", json=db)
     assert response.status_code == 201
     assert response.json() == db
+    response1 = client.get("/sheep/8")
+    assert response1.json() == db
 
